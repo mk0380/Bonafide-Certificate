@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="./logo.png">
+    <script type="module" src="./index.js"></script>
+    <script src="https://unpkg.com/pdf-lib/dist/pdf-lib.min.js"></script>
+    <script src="https://unpkg.com/@pdf-lib/fontkit@0.0.4"></script>
+    <script src="./FileSaver.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>DOSA | IIT Kanpur</title>
+</head>
+
+<body>
+    <!-- <iframe src="./Bonafide_Certificate.pdf" frameborder="0" id="mypdf" height="700px" width="600px"></iframe> -->
+    <div class="container">
+        <div class="text">
+            Bonafide Certificate Form
+        </div>
+        <form id="google-sheet">
+            <div class="form-row">
+                <div class="input-data">
+                    <input type="text" id="studentInput" name="Name" required>
+                    <div class="underline"></div>
+                    <label id="studentName">Name Of Student</label>
+                </div>
+                <div class="input-data">
+                    <input type="number" id="rollInput" name="Roll No" required>
+                    <div class="underline"></div>
+                    <label id="rollName">Roll No</label>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="input-data">
+                    <select id="programmeInput" name="Programme">
+                        <option value="">Programme</option>
+                        <option value="Bachelor Of Technology (B.Tech)">Bachelor Of Technology (B.Tech)</option>
+                        <option value="Master Of Technology (M.Tech)">Master Of Technology (M.Tech)</option>
+                        <option value="Bachelor Of Science (B.S)">Bachelor Of Science (B.S)</option>
+                        <option value="Master Of Science (M.Sc)">Master Of Science (M.Sc)</option>
+                        <option value="Dual Degree Programme">Dual Degree Programme</option>
+                        <option value="Master Of Business Administration (MBA)">Master Of Business Administration (MBA)
+                        </option>
+                        <option value="Doctor of Philosophy (Ph.D)">Doctor of Philosophy (Ph.D)</option>
+                        <option value="Master of Design (M.Des)">Master of Design (M.Des)</option>
+                        <option value=" ">None Of The Above</option>
+                    </select>
+                    <div class="underline"></div>
+                </div>
+                <div class="input-data">
+                    <select id="branchInput" name="Branch">
+                        <option value="">Branch</option>
+                        <option value="Aerospace Engineering">Aerospace Engineering</option>
+                        <option value="Biological Sciences and Bio-Engineering">Biological Sciences and Bio-Engineering
+                        </option>
+                        <option value="Chemical Engineering">Chemical Engineering</option>
+                        <option value="Chemistry">Chemistry</option>
+                        <option value="Civil Engineering">Civil Engineering</option>
+                        <option value="Cognitive Science">Cognitive Science</option>
+                        <option value="Computer Science and Engineering">Computer Science and Engineering</option>
+                        <option value="Design">Design</option>
+                        <option value="Earth Sciences">Earth Sciences</option>
+                        <option value="Economics">Economics</option>
+                        <option value="Economic Sciences">Economic Sciences</option>
+                        <option value="Electrical Engineering">Electrical Engineering</option>
+                        <option value="Humanities and Social Sciences">Humanities and Social Sciences</option>
+                        <option value="Management Sciences">Management Sciences</option>
+                        <option value="Materials Science and Engineering">Materials Science and Engineering</option>
+                        <option value="Materials Science Program">Materials Science Program</option>
+                        <option value="Mathematics">Mathematics</option>
+                        <option value="Mathematics and Scientific Computing">Mathematics and Scientific Computing</option>
+                        <option value="Mechanical Engineering">Mechanical Engineering</option>
+                        <option value="Nuclear Engineering and Technology">Nuclear Engineering and Technology</option>
+                        <option value="Photonics Science and Engineering">Photonics Science and Engineering</option>
+                        <option value="Physics">Physics</option>
+                        <option value="Statistics">Statistics</option>
+                        <option value="Statistics and Data Science">Statistics and Data Science</option>
+                        <option value="Sustainable Energy Engineering">Sustainable Energy Engineering</option>
+                        <option value=" ">None Of The Above</option>
+                    </select>
+                    <div class="underline"></div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="input-data">
+                    <input type="text" id="roomNoInput" name="Room No" required>
+                    <div class="underline"></div>
+                    <label id="roomNoName">Room No</label>
+                </div>
+                <div class="input-data">
+                    <select name="Current Hall No" id="hallInput">
+                        <option value="">Current Hall No</option>
+                        <option value="Hall Of Residence No. 1">Hall Of Residence No. 1</option>
+                        <option value="Hall Of Residence No. 2">Hall Of Residence No. 2</option>
+                        <option value="Hall Of Residence No. 3">Hall Of Residence No. 3</option>
+                        <option value="Hall Of Residence No. 4">Hall Of Residence No. 4</option>
+                        <option value="Hall Of Residence No. 5">Hall Of Residence No. 5</option>
+                        <option value="Hall Of Residence No. 7">Hall Of Residence No. 7</option>
+                        <option value="Hall Of Residence No. 8">Hall Of Residence No. 8</option>
+                        <option value="Hall Of Residence No. 9">Hall Of Residence No. 9</option>
+                        <option value="Hall Of Residence No. 10">Hall Of Residence No. 10</option>
+                        <option value="Hall Of Residence No. 11">Hall Of Residence No. 11</option>
+                        <option value="Hall Of Residence No. 12">Hall Of Residence No. 12</option>
+                        <option value="Hall Of Residence No. 13">Hall Of Residence No. 13</option>
+                        <option value="Hall Of Residence No. 14">Hall Of Residence No. 14</option>
+                        <option value="Hall Of Residence For Girls-1">Hall Of Residence For Girls-1</option>
+                        <option value="Hall Of Residence For Girls-6">Hall Of Residence For Girls-6</option>
+                        <option value=" ">None Of The Above</option>
+                    </select>
+                    <div class="underline"></div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="input-data">
+                    <select name="Joining Year" id="yearInput" required>
+                        <option value="">Joining Year</option>
+                    </select>
+                </div>
+                <div class="input-data">
+                    <input type="tel" id="mobileInput" name="Mobile No" required>
+                    <div class="underline"></div>
+                    <label id="altEmailName">Mobile No.</label>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="input-data">
+                    <input type="text" id="parentNameInput" name="Parents Name" required>
+                    <div class="underline"></div>
+                    <label id="parentNameInput">Parent's Name</label>
+                </div>
+                <div class="input-data">
+                    <input type="text" id="perAddInput" name="Permanent Address" required>
+                    <div class="underline"></div>
+                    <label id="perAddName">Permanent Address</label>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="input-data">
+                    <input type="tel" id="contactParInput" name="Contact Of Parents" required>
+                    <div class="underline"></div>
+                    <label id="contactParName">Contact No of Parents</label>
+                </div>
+                <div class="input-data">
+                    <input type="text" id="purposeInput" name="Purpose" required>
+                    <div class="underline"></div>
+                    <label id="purposeName">Purpose</label>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="input-data textarea">
+                    <div class="form-row submit-btn">
+                        <div class="input-data" id="btn">
+                            <div class="inner"></div>
+                            <input type="button" value="Submit" name="submit" id="btn">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <script>
+
+        const selectElement = document.getElementById("yearInput");
+        const currentYear = new Date().getFullYear();
+
+        for (let year = currentYear - 8; year <= currentYear; year++) {
+            const option = document.createElement("option");
+            option.value = year;
+            option.textContent = year;
+            selectElement.appendChild(option);
+        }
+
+        const name = document.querySelector("#studentInput")
+        const roll = document.querySelector("#rollInput")
+        const programme = document.querySelector("#programmeInput")
+        const branch = document.querySelector("#branchInput")
+        const roomNo = document.querySelector("#roomNoInput")
+        const hallNo = document.querySelector("#hallInput")
+        const year = document.querySelector("#yearInput")
+        const mobile = document.querySelector("#mobileInput")
+        const parents = document.querySelector("#parentNameInput")
+        const address = document.querySelector("#perAddInput")
+        const contactParents = document.querySelector("#contactParInput")
+        const purpose = document.querySelector("#purposeInput")
+
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbyDjdA1xSw_OWWqV2qlr4QEoUVTGXpAhTG2YDA8Mu0Ckh8A3BosIzbi7lZh6ES5mS_P/exec'
+        const form = document.getElementById('google-sheet')
+        const btn = document.getElementById('btn')
+
+        btn.addEventListener('click', e => {
+            e.preventDefault()
+            if (name.value.length == 0 || roll.value.length == 0 || programme.value.length == 0 || branch.value.length == 0 || roomNo.value.length == 0 || hallNo.value.length == 0 || year.value.length == 0 || mobile.value.length == 0 || parents.value.length == 0 || address.value.length == 0 || contactParents.value.length == 0 || purpose.value.length == 0) {
+                return
+            }
+            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                .then(response => alert("Bonafide Certificate Form submitted successfully"))
+                .catch(error => console.error('Error!', error.message))
+        })
+    </script>
+</body>
+
+</html>
